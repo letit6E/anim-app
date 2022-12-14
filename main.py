@@ -21,7 +21,9 @@ if submit:
 	raw_result = get_text(input_url)
 
 	if raw_result:
+		result = summarize(raw_result, sizes[grade])
+
 		st.write('Result (summary of web site content)')
-		st.info(summarize(raw_result, sizes[grade]))
+		st.info(result)
 	else:
 		st.text('Invalid URL! Try again')
