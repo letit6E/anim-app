@@ -36,7 +36,7 @@ def get_text(url):
 		for elem in soup.select(tag):
 			elem.extract()
 
-	for elem in soup.find_all():
+	for elem in soup.select('div'):
 		if len(elem.text.split()) < ELEMENT_CONTENT_MIN_SIZE:
 			elem.extract()
 
